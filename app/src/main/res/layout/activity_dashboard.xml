@@ -1,0 +1,461 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mDrawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashboard.DashboardActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/main_toolbar" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/edt_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:background="@drawable/ic_edittext_background"
+                    android:drawableStart="@drawable/ic_search_edittext"
+                    android:drawablePadding="@dimen/_10sdp"
+                    android:hint="Search"
+                    android:inputType="text"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/purple"
+                    android:textColorHint="@color/purple"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcv_categories"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_110sdp"
+                    android:layout_marginStart="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginEnd="@dimen/_20sdp"
+                    android:scrollbars="horizontal"
+                    tools:itemCount="10"
+                    tools:listitem="@layout/row_home_categories" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:src="@drawable/ic_no_fee_box" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:src="@drawable/ic_dashboard_flatoff_banner" />
+
+                <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+                    android:id="@+id/image_carousel_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    app:autoPlay="true"
+                    app:autoPlayDelay="4000"
+                    app:autoWidthFixing="false"
+                    app:captionMargin="@dimen/_20sdp"
+                    app:captionTextSize="14sp"
+                    app:carouselGravity="START"
+                    app:carouselPaddingEnd="30dp"
+                    app:carouselPaddingStart="30dp"
+                    app:carouselType="SHOWCASE"
+                    app:imageScaleType="fitXY"
+                    app:infiniteCarousel="true"
+                    app:scaleOnScroll="true"
+                    app:scalingFactor="0.10"
+                    app:showBottomShadow="false"
+                    app:showCaption="false"
+                    app:showIndicator="true"
+                    app:showNavigationButtons="false"
+                    app:showTopShadow="false" />
+
+                <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+                    android:id="@+id/image_carousel_view_coupon"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    app:autoPlay="true"
+                    app:autoPlayDelay="4000"
+                    app:autoWidthFixing="false"
+                    app:captionMargin="@dimen/_20sdp"
+                    app:captionTextSize="14sp"
+                    app:carouselGravity="START"
+                    app:carouselPaddingEnd="30dp"
+                    app:carouselPaddingStart="30dp"
+                    app:carouselType="SHOWCASE"
+                    app:imageScaleType="fitXY"
+                    app:infiniteCarousel="true"
+                    app:scaleOnScroll="true"
+                    app:scalingFactor="0.10"
+                    app:showBottomShadow="false"
+                    app:showCaption="false"
+                    app:showIndicator="true"
+                    app:showNavigationButtons="false"
+                    app:showTopShadow="false" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_300sdp"
+                    android:background="@drawable/ic_dashboard_offer_background"
+                    android:orientation="horizontal"></LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_300sdp"
+                    android:background="@drawable/ic_dashboard_second_offer_background"
+                    android:orientation="horizontal"></LinearLayout>
+
+                <org.imaginativeworld.whynotimagecarousel.ImageCarousel
+                    android:id="@+id/image_carousel_view_coupon_second"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    app:autoPlay="true"
+                    app:autoPlayDelay="4000"
+                    app:autoWidthFixing="false"
+                    app:captionMargin="@dimen/_20sdp"
+                    app:captionTextSize="14sp"
+                    app:carouselGravity="START"
+                    app:carouselPaddingEnd="30dp"
+                    app:carouselPaddingStart="30dp"
+                    app:carouselType="SHOWCASE"
+                    app:imageScaleType="fitXY"
+                    app:infiniteCarousel="true"
+                    app:scaleOnScroll="true"
+                    app:scalingFactor="0.10"
+                    app:showBottomShadow="false"
+                    app:showCaption="false"
+                    app:showIndicator="true"
+                    app:showNavigationButtons="false"
+                    app:showTopShadow="false" />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:background="@color/purple"
+                    android:padding="@dimen/_20sdp"
+                    android:src="@drawable/heading" />
+
+                <GridView
+                    android:id="@+id/grid_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_200sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:gravity="center"
+                    android:numColumns="3"
+                    android:verticalSpacing="@dimen/_20sdp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_300sdp"
+                    android:background="@drawable/ic_dashboard_second_offer_background"
+                    android:orientation="horizontal"></LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_drawer"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#FFFFFF">
+
+            <TextView
+                android:id="@+id/tvWomanFashion"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="bottom"
+                android:includeFontPadding="true"
+                android:text="Woman's Fashion"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="RtlSymmetry" />
+
+            <ImageView
+                android:id="@+id/ivWBorder"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvWomanFashion" />
+
+            <TextView
+                android:id="@+id/tvManFashion"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="bottom"
+                android:includeFontPadding="true"
+                android:text="Men's Fashion"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivWBorder"
+                tools:ignore="RtlSymmetry" />
+
+            <ImageView
+                android:id="@+id/ivMBorder"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvManFashion" />
+
+            <TextView
+                android:id="@+id/tvElectronics"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="bottom"
+                android:includeFontPadding="true"
+                android:text="Electronics"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivMBorder"
+                tools:ignore="RtlSymmetry" />
+
+            <ImageView
+                android:id="@+id/ivEBorder"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvElectronics" />
+
+            <TextView
+                android:id="@+id/tvHomeLifeStyle"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="bottom"
+                android:includeFontPadding="true"
+                android:text="Home &amp; Lifestyle"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivEBorder"
+                tools:ignore="RtlSymmetry" />
+
+            <ImageView
+                android:id="@+id/ivHBorder"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHomeLifeStyle" />
+
+            <TextView
+                android:id="@+id/tvMedicine"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="bottom"
+                android:includeFontPadding="true"
+                android:text="Medicine"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivHBorder"
+                tools:ignore="RtlSymmetry" />
+
+            <ImageView
+                android:id="@+id/ivMeBorder"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvMedicine" />
+
+            <TextView
+                android:id="@+id/tvSports"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="bottom"
+                android:includeFontPadding="true"
+                android:text="Sports &amp; Outdoor"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivMeBorder"
+                tools:ignore="RtlSymmetry" />
+
+            <ImageView
+                android:id="@+id/ivSportsBorder"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSports" />
+
+            <TextView
+                android:id="@+id/tvBabyToys"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="bottom"
+                android:includeFontPadding="true"
+                android:text="Baby’s &amp; Toys"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivSportsBorder"
+                tools:ignore="RtlSymmetry" />
+
+            <ImageView
+                android:id="@+id/ivBabyBorder"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvBabyToys" />
+
+            <TextView
+                android:id="@+id/tvGroceries"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="bottom"
+                android:includeFontPadding="true"
+                android:text="Groceries &amp; Pets"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivBabyBorder"
+                tools:ignore="RtlSymmetry" />
+
+            <ImageView
+                android:id="@+id/ivGroBorder"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvGroceries" />
+
+            <TextView
+                android:id="@+id/tvHealthBeauty"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="bottom"
+                android:includeFontPadding="true"
+                android:text="Health &amp; Beauty"
+                android:textColor="@color/blue"
+                android:textSize="@dimen/_12ssp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivGroBorder"
+                tools:ignore="RtlSymmetry" />
+
+            <ImageView
+                android:id="@+id/ivHealthBorder"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_1sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:src="@color/grey"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvHealthBeauty" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
