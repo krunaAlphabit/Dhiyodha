@@ -21,7 +21,7 @@
         android:fontFamily="@font/poppins_bold"
         android:text="SHIRTS"
         android:textAlignment="center"
-        android:textColor="@color/blue"
+        android:textColor="@color/midnightBlue"
         android:textSize="@dimen/_12ssp"
         tools:ignore="RtlCompat" />
 

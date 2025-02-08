@@ -16,6 +16,71 @@
             android:id="@+id/toolbar"
             layout="@layout/main_toolbar" />
 
+        <LinearLayout
+            android:id="@+id/lnrLocation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:src="@drawable/ic_address_icon" />
+
+            <TextView
+                android:id="@+id/tvAddressType"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center_vertical"
+                android:text="Office"
+                android:textColor="@color/midnightBlue"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlCompat,RtlSymmetry" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center_vertical"
+                android:text="|"
+                android:textColor="@color/midnightBlue"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlCompat,RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:text="1036 - RK World Tower, Shital Park, "
+                android:textColor="@color/midnightBlue"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlCompat,RtlSymmetry" />
+
+            <TextView
+                android:id="@+id/tvChangeAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="end"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:fontFamily="@font/poppins_semibold"
+                android:gravity="center_vertical"
+                android:text="Change"
+                android:textColor="@color/bluishPurple"
+                android:textSize="@dimen/_12ssp"
+                tools:ignore="RtlCompat,RtlSymmetry" />
+
+        </LinearLayout>
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -25,24 +90,35 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <EditText
-                    android:id="@+id/edt_search"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_20sdp"
                     android:layout_marginTop="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_20sdp"
-                    android:background="@drawable/ic_edittext_background"
-                    android:drawableStart="@drawable/ic_search_edittext"
-                    android:drawablePadding="@dimen/_10sdp"
-                    android:hint="Search"
-                    android:inputType="text"
-                    android:padding="@dimen/_10sdp"
-                    android:textColor="@color/purple"
-                    android:textColorHint="@color/purple"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/toolbar" />
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/edt_search"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_20sdp"
+                        android:layout_weight="1"
+                        android:background="@drawable/ic_dashboard_edittext_background"
+                        android:drawableStart="@drawable/ic_search_edittext"
+                        android:drawablePadding="@dimen/_10sdp"
+                        android:hint="Search"
+                        android:inputType="text"
+                        android:padding="@dimen/_10sdp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/generalGray" />
+
+                    <ImageView
+                        android:id="@+id/imgScanProduct"
+                        android:layout_width="@dimen/_50sdp"
+                        android:layout_height="match_parent"
+                        android:padding="@dimen/_5sdp"
+                        android:src="@drawable/ic_dashboard_edittext_camera" />
+
+                </LinearLayout>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcv_categories"
@@ -157,7 +233,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_60sdp"
-                    android:background="@color/purple"
+                    android:background="@color/bluishPurple"
                     android:padding="@dimen/_20sdp"
                     android:src="@drawable/heading" />
 
@@ -202,7 +278,7 @@
                 android:gravity="bottom"
                 android:includeFontPadding="true"
                 android:text="Woman's Fashion"
-                android:textColor="@color/blue"
+                android:textColor="@color/midnightBlue"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -217,7 +293,7 @@
                 android:layout_marginTop="@dimen/_1sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
-                android:src="@color/grey"
+                android:src="@color/brightGray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvWomanFashion" />
@@ -231,7 +307,7 @@
                 android:gravity="bottom"
                 android:includeFontPadding="true"
                 android:text="Men's Fashion"
-                android:textColor="@color/blue"
+                android:textColor="@color/midnightBlue"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -246,7 +322,7 @@
                 android:layout_marginTop="@dimen/_1sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
-                android:src="@color/grey"
+                android:src="@color/brightGray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvManFashion" />
@@ -260,7 +336,7 @@
                 android:gravity="bottom"
                 android:includeFontPadding="true"
                 android:text="Electronics"
-                android:textColor="@color/blue"
+                android:textColor="@color/midnightBlue"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -275,7 +351,7 @@
                 android:layout_marginTop="@dimen/_1sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
-                android:src="@color/grey"
+                android:src="@color/brightGray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvElectronics" />
@@ -289,7 +365,7 @@
                 android:gravity="bottom"
                 android:includeFontPadding="true"
                 android:text="Home &amp; Lifestyle"
-                android:textColor="@color/blue"
+                android:textColor="@color/midnightBlue"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -304,7 +380,7 @@
                 android:layout_marginTop="@dimen/_1sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
-                android:src="@color/grey"
+                android:src="@color/brightGray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvHomeLifeStyle" />
@@ -318,7 +394,7 @@
                 android:gravity="bottom"
                 android:includeFontPadding="true"
                 android:text="Medicine"
-                android:textColor="@color/blue"
+                android:textColor="@color/midnightBlue"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -333,7 +409,7 @@
                 android:layout_marginTop="@dimen/_1sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
-                android:src="@color/grey"
+                android:src="@color/brightGray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvMedicine" />
@@ -347,7 +423,7 @@
                 android:gravity="bottom"
                 android:includeFontPadding="true"
                 android:text="Sports &amp; Outdoor"
-                android:textColor="@color/blue"
+                android:textColor="@color/midnightBlue"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -362,7 +438,7 @@
                 android:layout_marginTop="@dimen/_1sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
-                android:src="@color/grey"
+                android:src="@color/brightGray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvSports" />
@@ -376,7 +452,7 @@
                 android:gravity="bottom"
                 android:includeFontPadding="true"
                 android:text="Baby’s &amp; Toys"
-                android:textColor="@color/blue"
+                android:textColor="@color/midnightBlue"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -391,7 +467,7 @@
                 android:layout_marginTop="@dimen/_1sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
-                android:src="@color/grey"
+                android:src="@color/brightGray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvBabyToys" />
@@ -405,7 +481,7 @@
                 android:gravity="bottom"
                 android:includeFontPadding="true"
                 android:text="Groceries &amp; Pets"
-                android:textColor="@color/blue"
+                android:textColor="@color/midnightBlue"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -420,7 +496,7 @@
                 android:layout_marginTop="@dimen/_1sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
-                android:src="@color/grey"
+                android:src="@color/brightGray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvGroceries" />
@@ -434,7 +510,7 @@
                 android:gravity="bottom"
                 android:includeFontPadding="true"
                 android:text="Health &amp; Beauty"
-                android:textColor="@color/blue"
+                android:textColor="@color/midnightBlue"
                 android:textSize="@dimen/_12ssp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -449,7 +525,7 @@
                 android:layout_marginTop="@dimen/_1sdp"
                 android:layout_marginEnd="@dimen/_15sdp"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
-                android:src="@color/grey"
+                android:src="@color/brightGray"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tvHealthBeauty" />

@@ -13,7 +13,6 @@ android {
     defaultConfig {
         applicationId = "com.alphabit.dhiyodha"
         minSdk = 24
-        //noinspection EditedTargetSdkVersion
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -39,6 +38,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -106,4 +106,13 @@ dependencies {
 
     //banner  slide
     implementation(libs.whynotimagecarousel)
+
+    //location
+    implementation(libs.play.services.location)
+
+    // image labeling
+    implementation(libs.image.labeling)
+
+    // AlertDialog
+    implementation(libs.sweetalert.library)
 }

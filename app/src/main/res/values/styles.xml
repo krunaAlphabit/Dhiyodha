@@ -3,19 +3,16 @@
 
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryVariant">@color/purple_60</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorPrimaryVariant">@color/white</item>
         <item name="colorOnPrimary">@color/white</item>
-        <item name="colorAccent">@color/colorButtonStart</item>
-        <item name="colorControlHighlight">@color/grey_10</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowDisablePreview">true</item>
         <item name="android:windowLightStatusBar">true</item>
-        <item name="android:statusBarColor">@color/colorScreenBackground</item>
+        <item name="android:statusBarColor">@color/white</item>
         <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">shortEdges
         </item>
-        <!--<item name="android:fitsSystemWindows">true</item>-->
     </style>
 
     <style name="SlidingDialogAnimation">
@@ -135,7 +132,6 @@
     <style name="small_textview_gray">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/gray</item>
         <item name="android:textSize">@dimen/_8ssp</item>
     </style>
 
@@ -163,95 +159,11 @@
         <item name="android:textSize">@dimen/_10ssp</item>
     </style>
 
-    <style name="medium_textview_gray_10">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/grey</item>
-        <item name="android:textSize">@dimen/_10ssp</item>
-    </style>
-
-    <style name="textview_view_all">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/grey</item>
-        <item name="android:textSize">@dimen/_8ssp</item>
-    </style>
-
-    <style name="small_textview_gray_dialog">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/grey</item>
-        <item name="android:textSize">@dimen/_8ssp</item>
-    </style>
-
     <style name="small_textview_white">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">@dimen/_8ssp</item>
-    </style>
-
-    <style name="textview_availability">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">@dimen/_8ssp</item>
-        <item name="android:paddingBottom">@dimen/_10ssp</item>
-        <item name="android:paddingTop">@dimen/_10ssp</item>
-        <item name="android:paddingEnd">@dimen/_8ssp</item>
-        <item name="android:paddingStart">@dimen/_8ssp</item>
-    </style>
-
-    <style name="small_textview_with_img">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/grey</item>
-        <item name="android:textSize">@dimen/_8ssp</item>
-        <item name="android:gravity">center</item>
-        <item name="android:drawablePadding">@dimen/_5sdp</item>
-    </style>
-
-    <style name="large_textview_17">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">@dimen/_17ssp</item>
-    </style>
-
-    <style name="icon_call_end_receive">
-        <item name="android:layout_width">@dimen/_55sdp</item>
-        <item name="android:layout_height">@dimen/_55sdp</item>
-        <item name="android:scaleType">centerCrop</item>
-    </style>
-
-    <style name="medium_textview_white_12">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">@dimen/_12ssp</item>
-    </style>
-
-    <style name="tv_border_button">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:textSize">@dimen/_12ssp</item>
-        <item name="android:paddingTop">@dimen/_7sdp</item>
-        <item name="android:paddingBottom">@dimen/_7sdp</item>
-        <item name="android:paddingStart">@dimen/_10sdp</item>
-        <item name="android:paddingEnd">@dimen/_10sdp</item>
-    </style>
-
-    <style name="tv_button_white">
-        <item name="android:layout_width">0dp</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/color_bottom_sheet</item>
-        <item name="android:textSize">@dimen/_12ssp</item>
-        <item name="android:paddingBottom">@dimen/_7sdp</item>
-        <item name="android:paddingTop">@dimen/_7sdp</item>
-        <item name="android:paddingStart">@dimen/_6sdp</item>
-        <item name="android:paddingEnd">@dimen/_6sdp</item>
-        <item name="android:gravity">center</item>
     </style>
 
     <style name="Widget.Demo.BottomSheet" parent="Widget.MaterialComponents.BottomSheet">

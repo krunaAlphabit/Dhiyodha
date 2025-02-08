@@ -1,18 +1,19 @@
-package com.alphabit.dhiyodha.Dashboard
+package com.alphabit.dhiyodha.Cart
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.alphabit.dhiyodha.databinding.RowCartItemBinding
 import com.alphabit.dhiyodha.databinding.RowHomeCategoriesBinding
 
-class DashboardCategoriesAdapter : RecyclerView.Adapter<DashboardCategoriesAdapter.MyViewHolder>() {
+class CartItemAdapter : RecyclerView.Adapter<CartItemAdapter.MyViewHolder>() {
 
-    class MyViewHolder(val binding: RowHomeCategoriesBinding) :
+    class MyViewHolder(val binding: RowCartItemBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(
-            RowHomeCategoriesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            RowCartItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 
