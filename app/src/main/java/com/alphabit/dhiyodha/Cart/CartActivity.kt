@@ -11,15 +11,12 @@ import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.alphabit.dhiyodha.Dashboard.DashboardCategoriesAdapter
+import com.alphabit.dhiyodha.BottomSheets.AddAddressBottomSheet
 import com.alphabit.dhiyodha.R
 import com.alphabit.dhiyodha.databinding.ActivityCartBinding
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -56,9 +53,17 @@ class CartActivity : AppCompatActivity() {
     }
 
     private fun setUpClickListener() {
+        binding.tvSelectAddress.setOnClickListener {
+            showAddressBottomSheet()
+        }
         binding.tvChangeCode.setOnClickListener {
             checkLocationPermission()
         }
+    }
+
+    private fun showAddressBottomSheet() {
+        val bottomSheet = AddAddressBottomSheet()
+        bottomSheet.show(supportFragmentManager, AddAddressBottomSheet::class.java.name)
     }
 
     private fun setUpToolBar() {

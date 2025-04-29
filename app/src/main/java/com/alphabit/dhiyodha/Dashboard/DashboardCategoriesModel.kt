@@ -1,7 +1,3 @@
 package com.alphabit.dhiyodha.Dashboard
 
-data class DashboardCategoriesModel(
-    val id: String? = null,
-    val imageUrl: String? = null,
-    val name: String? = null,
-)
+data class DashboardCategoriesModel(val name: String, val imageRes: Int)

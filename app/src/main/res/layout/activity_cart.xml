@@ -134,7 +134,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_10sdp"
-                android:background="@color/white" />
+                android:background="@color/white"
+                tools:itemCount="10"
+                tools:listitem="@layout/row_cart_item" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -466,16 +468,10 @@
 
         <TextView
             android:id="@+id/tvSelectAddress"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ic_button_pressed"
-            android:fontFamily="@font/poppins_bold"
-            android:paddingHorizontal="@dimen/_15sdp"
-            android:paddingVertical="@dimen/_10sdp"
+            style="@style/button"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_40sdp"
             android:text="Select Address"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="@dimen/_12ssp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

@@ -14,7 +14,6 @@ import com.alphabit.dhiyodha.databinding.ActivitySplashBinding
 class SplashActivity : AppCompatActivity() {
 
     lateinit var binding: ActivitySplashBinding
-
     lateinit var sessionManager: SessionManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +25,7 @@ class SplashActivity : AppCompatActivity() {
         AppUtils.setStatusBar(window, this)
         sessionManager = SessionManager(this)
 
-        val slideAnimation = AnimationUtils.loadAnimation(this, R.anim.side_slide)
+        val slideAnimation = AnimationUtils.loadAnimation(this, R.anim.fade_in)
         binding.ivAppLogo.startAnimation(slideAnimation)
 
         startCountDown()
@@ -36,7 +35,7 @@ class SplashActivity : AppCompatActivity() {
         object : Thread() {
             override fun run() {
                 try {
-                    sleep(2000)
+                    sleep(4000)
                 } catch (e: InterruptedException) {
                     e.printStackTrace()
                 } finally {

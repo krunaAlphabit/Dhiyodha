@@ -4,64 +4,28 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.location.Address
-import android.location.Geocoder
 import android.location.Location
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.provider.Settings
-import android.view.LayoutInflater
-import android.view.MotionEvent
-import android.view.View.OnTouchListener
-import android.view.ViewGroup
-import android.widget.ImageView
+import android.view.View
 import android.widget.Toast
-import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import androidx.viewbinding.ViewBinding
-import com.alphabit.dhiyodha.BabyToys.BabyToysActivity
+import androidx.fragment.app.Fragment
 import com.alphabit.dhiyodha.Cart.CartActivity
-import com.alphabit.dhiyodha.Electronics.ElectronicsActivity
-import com.alphabit.dhiyodha.GroceriesPets.GroceriesPetsActivity
-import com.alphabit.dhiyodha.HealthBeauty.HealthBeautyActivity
-import com.alphabit.dhiyodha.HomeLifeStyle.HomeLifestyleActivity
-import com.alphabit.dhiyodha.ManFashion.ManActivity
-import com.alphabit.dhiyodha.Medicine.MedicineActivity
 import com.alphabit.dhiyodha.MyAccount.MyAccountActivity
 import com.alphabit.dhiyodha.R
 import com.alphabit.dhiyodha.ScanProduct.ScanProductActivity
-import com.alphabit.dhiyodha.SportsOutDoor.SportsOutdoorActivity
 import com.alphabit.dhiyodha.Wishlist.WishlistActivity
-import com.alphabit.dhiyodha.WomanFashion.WomanFashionActivity
 import com.alphabit.dhiyodha.databinding.ActivityDashboardBinding
-import com.alphabit.dhiyodha.databinding.RowDashboardBannerBinding
-import com.alphabit.dhiyodha.databinding.RowDashboardCouponBannerBinding
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
-import com.google.android.material.snackbar.Snackbar
-import org.imaginativeworld.whynotimagecarousel.ImageCarousel
-import org.imaginativeworld.whynotimagecarousel.listener.CarouselListener
-import org.imaginativeworld.whynotimagecarousel.model.CarouselItem
-import org.imaginativeworld.whynotimagecarousel.utils.setImage
-import java.io.IOException
-import java.util.Locale
-
 
 class DashboardActivity : AppCompatActivity() {
 
-    companion object {
-        const val CAMERA_REQUEST_RESULT = 1
-        val TAG = DashboardActivity::class.java.simpleName
-    }
-
     private lateinit var binding: ActivityDashboardBinding
-    private lateinit var categoriesAdapter: DashboardCategoriesAdapter
-    private lateinit var layoutManager: LinearLayoutManager
     private lateinit var fusedLocationClient: FusedLocationProviderClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,15 +38,36 @@ class DashboardActivity : AppCompatActivity() {
             LocationServices.getFusedLocationProviderClient(this@DashboardActivity)
 
         setUpClickListener()
-        setCategoriesAdapter()
-        setUpBanner()
-        setUpBannerForCoupon()
-        setUpBannerForSecondCoupon()
+        setUpBottomNavigationView()
+        loadFragment(HomeFragment())
+    }
+
+    private fun setUpBottomNavigationView() {
+        binding.apply {
+            bottomNavigationView.setOnItemSelectedListener { menuItem ->
+                val fragment: Fragment = when (menuItem.itemId) {
+                    R.id.nav_home -> HomeFragment()
+                    R.id.nav_explore -> ExploreFragment()
+                    R.id.nav_categories -> CategoriesFragment()
+                    R.id.nav_account -> AccountFragment()
+                    else -> HomeFragment()
+                }
+                supportFragmentManager.beginTransaction()
+                    .replace(binding.fragmentContainer.id, fragment).commit()
+                true
+            }
+        }
+    }
+
+    private fun loadFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
     }
 
     @SuppressLint("ClickableViewAccessibility")
     private fun setUpClickListener() {
-        binding.toolbar.ivCart.setOnClickListener {
+        /*binding.toolbar.ivCart.setOnClickListener {
             val intent = Intent(this@DashboardActivity, CartActivity::class.java)
             startActivity(intent)
         }
@@ -104,9 +89,9 @@ class DashboardActivity : AppCompatActivity() {
                 binding.mDrawerLayout.openDrawer(binding.navDrawer)
                 setDrawerClickListener()
             }
-        }
+        }*/
 
-        binding.tvChangeAddress.setOnClickListener {
+        /*binding.tvChangeAddress.setOnClickListener {
             checkLocationPermission()
         }
 
@@ -120,7 +105,7 @@ class DashboardActivity : AppCompatActivity() {
                 val intent = Intent(this@DashboardActivity, ScanProductActivity::class.java)
                 startActivity(intent)
             }
-        }
+        }*/
     }
 
     // Permission
@@ -134,7 +119,7 @@ class DashboardActivity : AppCompatActivity() {
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
-        grantResults: IntArray
+        grantResults: IntArray,
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (isCameraPermissionGiven()) {
@@ -166,18 +151,18 @@ class DashboardActivity : AppCompatActivity() {
                 Manifest.permission.ACCESS_FINE_LOCATION
             ) != PackageManager.PERMISSION_GRANTED
         ) {
-            requestLocationPermission()
+            //requestLocationPermission()
         } else {
             // Permission is already granted
             getUserLocation()
         }
     }
 
-    private fun requestLocationPermission() {
+    /*private fun requestLocationPermission() {
         requestPermissionLauncher.launch(Manifest.permission.ACCESS_FINE_LOCATION)
-    }
+    }*/
 
-    private val requestPermissionLauncher =
+    /*private val requestPermissionLauncher =
         registerForActivityResult(ActivityResultContracts.RequestPermission()) { isGranted: Boolean ->
             if (isGranted) {
                 getUserLocation()
@@ -202,20 +187,20 @@ class DashboardActivity : AppCompatActivity() {
                 }.setBackgroundTint(resources.getColor(R.color.midnightBlue))
                     .setActionTextColor(resources.getColor(R.color.white)).show()
             }
-        }
+        }*/
 
     @SuppressLint("MissingPermission")
     private fun getUserLocation() {
         fusedLocationClient.lastLocation.addOnSuccessListener { location: Location? ->
             location?.let {
-                getAddressFromLocation(it.latitude, it.longitude)
+                //getAddressFromLocation(it.latitude, it.longitude)
             } ?: run {
                 Toast.makeText(this, "Unable to get location", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
-    private fun getAddressFromLocation(latitude: Double, longitude: Double) {
+    /*private fun getAddressFromLocation(latitude: Double, longitude: Double) {
         try {
             val geocoder = Geocoder(this, Locale.getDefault())
             val addresses: List<Address>? = geocoder.getFromLocation(latitude, longitude, 1)
@@ -232,10 +217,10 @@ class DashboardActivity : AppCompatActivity() {
             e.printStackTrace()
             Toast.makeText(this, "Geocoder service not available", Toast.LENGTH_SHORT).show()
         }
-    }
+    }*/
 
     private fun setDrawerClickListener() {
-        binding.tvWomanFashion.setOnClickListener {
+        /*binding.tvWomanFashion.setOnClickListener {
             binding.mDrawerLayout.closeDrawer(binding.navDrawer)
             val intent = Intent(this@DashboardActivity, WomanFashionActivity::class.java)
             startActivity(intent)
@@ -279,16 +264,16 @@ class DashboardActivity : AppCompatActivity() {
             binding.mDrawerLayout.closeDrawer(binding.navDrawer)
             val intent = Intent(this@DashboardActivity, HealthBeautyActivity::class.java)
             startActivity(intent)
-        }
+        }*/
     }
 
-    private fun setUpBannerForCoupon() {
+    /*private fun setUpBannerForCoupon() {
         val carousel: ImageCarousel = binding.imageCarouselViewCoupon
         carousel.registerLifecycle(lifecycle)
 
         binding.imageCarouselViewCoupon.carouselListener = object : CarouselListener {
             override fun onCreateViewHolder(
-                layoutInflater: LayoutInflater, parent: ViewGroup
+                layoutInflater: LayoutInflater, parent: ViewGroup,
             ): ViewBinding {
                 return RowDashboardCouponBannerBinding.inflate(
                     layoutInflater, parent, false
@@ -296,7 +281,7 @@ class DashboardActivity : AppCompatActivity() {
             }
 
             override fun onBindViewHolder(
-                binding: ViewBinding, item: CarouselItem, position: Int
+                binding: ViewBinding, item: CarouselItem, position: Int,
             ) {
                 val currentBinding = binding as RowDashboardCouponBannerBinding
                 currentBinding.imageView.apply {
@@ -318,7 +303,7 @@ class DashboardActivity : AppCompatActivity() {
         binding.imageCarouselViewCouponSecond.carouselListener = object : CarouselListener {
 
             override fun onCreateViewHolder(
-                layoutInflater: LayoutInflater, parent: ViewGroup
+                layoutInflater: LayoutInflater, parent: ViewGroup,
             ): ViewBinding {
                 return RowDashboardCouponBannerBinding.inflate(
                     layoutInflater, parent, false
@@ -326,7 +311,7 @@ class DashboardActivity : AppCompatActivity() {
             }
 
             override fun onBindViewHolder(
-                binding: ViewBinding, item: CarouselItem, position: Int
+                binding: ViewBinding, item: CarouselItem, position: Int,
             ) {
                 val currentBinding = binding as RowDashboardCouponBannerBinding
                 currentBinding.imageView.apply {
@@ -347,7 +332,7 @@ class DashboardActivity : AppCompatActivity() {
 
         binding.imageCarouselView.carouselListener = object : CarouselListener {
             override fun onCreateViewHolder(
-                layoutInflater: LayoutInflater, parent: ViewGroup
+                layoutInflater: LayoutInflater, parent: ViewGroup,
             ): ViewBinding {
                 return RowDashboardBannerBinding.inflate(
                     layoutInflater, parent, false
@@ -355,7 +340,7 @@ class DashboardActivity : AppCompatActivity() {
             }
 
             override fun onBindViewHolder(
-                binding: ViewBinding, item: CarouselItem, position: Int
+                binding: ViewBinding, item: CarouselItem, position: Int,
             ) {
                 val currentBinding = binding as RowDashboardBannerBinding
                 currentBinding.imageView.apply {
@@ -368,12 +353,12 @@ class DashboardActivity : AppCompatActivity() {
         for (i in 0 until 10) {
             carousel.addData(CarouselItem(i))
         }
-    }
+    }*/
 
-    private fun setCategoriesAdapter() {
+    /*private fun setCategoriesAdapter() {
         categoriesAdapter = DashboardCategoriesAdapter()
         layoutManager = LinearLayoutManager(this@DashboardActivity, RecyclerView.HORIZONTAL, false)
         binding.rcvCategories.adapter = categoriesAdapter
         binding.rcvCategories.layoutManager = layoutManager
-    }
+    }*/
 }

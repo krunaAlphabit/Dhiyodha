@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Dhiyodha</string>
+
+    <string name="appTitle"><font color="#061237">Login to</font> <font color="#6246EA">Dhiyodha</font></string>
+    <string name="appSignUpTitle"><font color="#061237">Sing up to</font> <font color="#6246EA">Dhiyodha</font></string>
+    <string name="dontHaveAccount"><font color="#989CAF">Don\'t have any account yet?</font> <font color="#6246EA"> Signup</font>></string>
+    <string name="alreadyHaveAccount"><font color="#989CAF">Already have Account.</font> <font color="#6246EA"> Login</font>></string>
+    <string name="privacyPolicy"><font color="#989CAF">By Signup, I agree to </font><font color="#6246EA">Terms &amp; Conditions</font> and<font color="#6246EA">Privacy Policy</font>></string>
+    <string name="signUpWithEmail"><font color="#061237">Sing up with</font> <font color="#6246EA">Email</font></string>
+    <string name="signUpWithPhone"><font color="#061237">Sing up with</font> <font color="#6246EA">Phone</font></string>
+    <string name="didNotRcvCode"><font color="#989CAF">I didn’t receive a code. </font> <font color="#6246EA">Resend Code</font></string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
 </resources>

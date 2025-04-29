@@ -34,6 +34,9 @@
                         android:id="@+id/ivBackground"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_15sdp"
+                        android:layout_marginEnd="@dimen/_15sdp"
+                        android:scaleType="fitXY"
                         android:src="@drawable/ic_account_purple_background"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -176,19 +179,20 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
                         android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
                         android:orientation="vertical">
 
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="@dimen/_10sdp"
                             android:fontFamily="@font/poppins_regular"
                             android:padding="@dimen/_10sdp"
                             android:text="Dhiyodha Wallet"
                             android:textAlignment="textStart"
                             android:textColor="@color/midnightBlue"
-                            android:textSize="@dimen/_15ssp"
+                            android:textSize="@dimen/_12ssp"
                             app:drawableEndCompat="@drawable/iv_profile_back_icon" />
 
                         <ImageView
@@ -205,7 +209,7 @@
                             android:text="Saved Cards"
                             android:textAlignment="textStart"
                             android:textColor="@color/midnightBlue"
-                            android:textSize="@dimen/_15ssp"
+                            android:textSize="@dimen/_12ssp"
                             app:drawableEndCompat="@drawable/iv_profile_back_icon" />
 
                         <ImageView
@@ -222,7 +226,7 @@
                             android:text="Invite Friend &amp; Earn"
                             android:textAlignment="textStart"
                             android:textColor="@color/midnightBlue"
-                            android:textSize="@dimen/_15ssp"
+                            android:textSize="@dimen/_12ssp"
                             app:drawableEndCompat="@drawable/iv_profile_back_icon" />
 
                         <ImageView
@@ -239,7 +243,7 @@
                             android:text="My Rewards"
                             android:textAlignment="textStart"
                             android:textColor="@color/midnightBlue"
-                            android:textSize="@dimen/_15ssp"
+                            android:textSize="@dimen/_12ssp"
                             app:drawableEndCompat="@drawable/iv_profile_back_icon" />
 
                         <ImageView
@@ -256,7 +260,7 @@
                             android:text="Address"
                             android:textAlignment="textStart"
                             android:textColor="@color/midnightBlue"
-                            android:textSize="@dimen/_15ssp"
+                            android:textSize="@dimen/_12ssp"
                             app:drawableEndCompat="@drawable/iv_profile_back_icon" />
 
                         <ImageView
@@ -273,12 +277,127 @@
                             android:text="Notifications"
                             android:textAlignment="textStart"
                             android:textColor="@color/midnightBlue"
-                            android:textSize="@dimen/_15ssp"
+                            android:textSize="@dimen/_12ssp"
                             app:drawableEndCompat="@drawable/iv_profile_back_icon" />
 
                     </LinearLayout>
 
                 </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_5sdp"
+                    app:cardMaxElevation="@dimen/_5sdp"
+                    app:cardPreventCornerOverlap="true"
+                    app:cardUseCompatPadding="true">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginEnd="@dimen/_10sdp"
+                        android:layout_marginBottom="@dimen/_10sdp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_regular"
+                            android:padding="@dimen/_10sdp"
+                            android:text="FAQs"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/midnightBlue"
+                            android:textSize="@dimen/_12ssp"
+                            app:drawableEndCompat="@drawable/iv_profile_back_icon" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:src="@color/periWinkle" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:padding="@dimen/_10sdp"
+                            android:text="About Us"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/midnightBlue"
+                            android:textSize="@dimen/_12ssp"
+                            app:drawableEndCompat="@drawable/iv_profile_back_icon" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:src="@color/periWinkle" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:padding="@dimen/_10sdp"
+                            android:text="Terms of Use"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/midnightBlue"
+                            android:textSize="@dimen/_12ssp"
+                            app:drawableEndCompat="@drawable/iv_profile_back_icon" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:src="@color/periWinkle" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:padding="@dimen/_10sdp"
+                            android:text="Privacy Policy"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/midnightBlue"
+                            android:textSize="@dimen/_12ssp"
+                            app:drawableEndCompat="@drawable/iv_profile_back_icon" />
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_1sdp"
+                            android:src="@color/periWinkle" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/_10sdp"
+                            android:fontFamily="@font/poppins_regular"
+                            android:padding="@dimen/_10sdp"
+                            android:text="Grievance Redressal"
+                            android:textAlignment="textStart"
+                            android:textColor="@color/midnightBlue"
+                            android:textSize="@dimen/_12ssp"
+                            app:drawableEndCompat="@drawable/iv_profile_back_icon" />
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <ImageView
+                    android:id="@+id/imgLogout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:layout_marginTop="@dimen/_20sdp"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_30sdp"
+                    android:src="@drawable/ic_logout" />
 
             </LinearLayout>
 

@@ -29,7 +29,7 @@ public class ConnectionError {
     }
 
 
-    private void showPopup (Context context, String error) {
+    private void showPopup(Context context, String error) {
         final AlertDialog alertDialog = new AlertDialog(context);
         alertDialog.setCancelable(false);
         alertDialog.setTitle("Connection Error");
@@ -54,7 +54,8 @@ public class ConnectionError {
 
 
     /**
-     *  Method is used to set the listener...
+     * Method is used to set the listener...
+     *
      * @param listener
      */
     public void setListener(Listener listener) {
@@ -63,7 +64,7 @@ public class ConnectionError {
 
 
     /**
-     *  INTERFACE is used to get the listener when dialog is closed...
+     * INTERFACE is used to get the listener when dialog is closed...
      */
     public static interface Listener {
         void returnData();

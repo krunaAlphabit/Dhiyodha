@@ -61,10 +61,13 @@ object Constants {
 
         companion object {
 
-            const val CHAT_BASE_URL = "http://64.227.156.65:3000"
+            const val BASE_URL = "http://13.233.184.35:8085/dhiyodha-ecommerce/api/"
 
             const val SIGNUP_USER = "api/v1/auth/signup"
             const val LOGIN_USER = "api/v1/auth/login"
+            const val FETCH_PRODUCT_BY_CATEGORY = "product/fetchProductByCategory"
+            const val ADD_ITEM_INTO_WISHLIST = "wishlist/add"
+            const val ADD_ITEM_INTO_CART = "cart/addToCart"
         }
     }
 

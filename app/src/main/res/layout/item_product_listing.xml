@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/_150sdp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imgProductImage"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_150sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_category_girl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_corner_radius="@dimen/_20sdp"
+        app:riv_mutate_background="true" />
+
+    <TextView
+        android:id="@+id/tvItemName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/poppins_semibold"
+        android:maxLines="1"
+        android:textAlignment="textStart"
+        android:textColor="@color/midnightBlue"
+        android:textSize="@dimen/_12ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgProductImage" />
+
+    <ImageView
+        android:id="@+id/imgAddToWishlist"
+        android:layout_width="@dimen/_20sdp"
+        android:layout_height="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:src="@drawable/ic_heart_icon"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imgProductImage" />
+
+    <TextView
+        android:id="@+id/tvItemSubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:fontFamily="@font/poppins_semibold"
+        android:maxLines="1"
+        android:textAlignment="textStart"
+        android:textColor="@color/generalGray"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvItemName" />
+
+    <TextView
+        android:id="@+id/tvProductOldPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:fontFamily="@font/poppins_semibold"
+        android:maxLines="1"
+        android:textAlignment="textStart"
+        android:textColor="@color/generalGray"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvItemSubTitle" />
+
+    <TextView
+        android:id="@+id/tvProductNewPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:fontFamily="@font/poppins_semibold"
+        android:maxLines="1"
+        android:textAlignment="textStart"
+        android:textColor="@color/midnightBlue"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintStart_toEndOf="@id/tvProductOldPrice"
+        app:layout_constraintTop_toBottomOf="@+id/tvItemSubTitle" />
+
+    <TextView
+        android:id="@+id/tvProductPercentageOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:background="@color/midnightBlue"
+        android:fontFamily="@font/poppins_semibold"
+        android:maxLines="1"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintStart_toEndOf="@id/tvProductNewPrice"
+        app:layout_constraintTop_toBottomOf="@+id/tvItemSubTitle" />
+
+    <TextView
+        android:id="@+id/tvProductDeliveryBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:fontFamily="@font/poppins_semibold"
+        android:maxLines="1"
+        android:textAlignment="textStart"
+        android:textColor="@color/midnightBlue"
+        android:textSize="@dimen/_10ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvProductOldPrice" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

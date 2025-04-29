@@ -30,9 +30,6 @@ public interface ApiServices {
     Call<JsonElement> sendGetWithQueryData(@Url String url, @Query("userId") String clubId);
 
     @GET()
-    Call<JsonElement> sendGetFollowersList(@Url String url, @Query("") String clubId);
-
-    @GET()
     Call<JsonElement> sendGetDataWithHashmap(@Url String url, @Query("searchValue") String searchValue);
 
     @Multipart
@@ -45,42 +42,7 @@ public interface ApiServices {
                                   @Part("type") RequestBody requestData,
                                   @Part MultipartBody.Part image);
 
-    @Multipart
-    @POST
-    Call<JsonElement> uploadProfilePictures(@Url String url,
-                                            @Part MultipartBody.Part image);
-
-    @Multipart
-    @POST
-    Call<JsonElement> addStory(@Url String url,
-                               @Part("expiresInDays") RequestBody expiresInDays,
-                               @Part("expiresInHours") RequestBody expiresInHours,
-                               @Part("type") RequestBody type,
-                               @Part MultipartBody.Part image);
-
-    @Multipart
-    @POST
-    Call<JsonElement> addGroupStory(@Url String url,
-                                    @Part("expiresInDays") RequestBody expiresInDays,
-                                    @Part("expiresInHours") RequestBody expiresInHours,
-                                    @Part("type") RequestBody type,
-                                    @Part("groupId") RequestBody groupId,
-                                    @Part MultipartBody.Part image);
-
-    @Multipart
-    @POST
-    Call<JsonElement> createProfile(@Url String url,
-                                    @Part("bio") RequestBody bio,
-                                    @Part("education") RequestBody education,
-                                    @Part("work") RequestBody work,
-                                    @Part("basicInfo") RequestBody basicInfo,
-                                    @Part("contactInfo") RequestBody contactInfo,
-                                    @Part MultipartBody.Part image);
-
     @GET()
-    Call<JsonElement> getPerticularUserMessages(@Url String url, @Query("offset") int offset, @Query("limit") int limit, @Query("roomId") String roomId);
-
-    @GET()
-    Call<JsonElement> getFollowersList(@Url String url, @Query("type") String roomId);
+    Call<JsonElement> getCategoryWiseProduct(@Url String url, @Query("browsePath") String browsePath, @Query("categoryId") String categoryId);
 
 }

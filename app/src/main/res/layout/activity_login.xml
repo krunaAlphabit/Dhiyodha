@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:orientation="vertical"
+    android:padding="@dimen/_20sdp"
+    tools:context=".Login.LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/poppins_regular"
+            android:text="Welcome to Dhiyodha"
+            android:textColor="@color/midnightBlue"
+            android:textSize="@dimen/_12ssp" />
+
+        <EditText
+            android:id="@+id/edtMobile"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_below="@id/tvTitle"
+            android:layout_marginTop="@dimen/_40sdp"
+            android:background="@drawable/ic_edittext_background"
+            android:hint="Enter Mobile Number"
+            android:padding="@dimen/_10sdp"
+            android:textColor="@color/bluishPurple"
+            android:textSize="@dimen/_12ssp" />
+
+        <TextView
+            android:id="@+id/tvContinue"
+            style="@style/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/edtMobile"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:text="Continue" />
+
+        <ImageView
+            android:id="@+id/imgOr"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvContinue"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:src="@drawable/ic_or_background" />
+
+        <LinearLayout
+            android:id="@+id/lnrSocialIcons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/imgOr"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:orientation="horizontal"
+            android:weightSum="3">
+
+            <ImageView
+                android:id="@+id/imgGoogle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_google" />
+
+            <ImageView
+                android:id="@+id/imgApple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_apple" />
+
+            <ImageView
+                android:id="@+id/imgFacebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:src="@drawable/ic_facebook" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvIHaveAccount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/lnrSocialIcons"
+            android:layout_marginTop="@dimen/_50sdp"
+            android:fontFamily="@font/poppins_regular"
+            android:maxLines="1"
+            android:text="By Signing In, I agree to Terms &amp; Conditions and Privacy Policy"
+            android:textColor="@color/generalGray"
+            android:textSize="@dimen/_10ssp" />
+
+    </RelativeLayout>
+
+</LinearLayout>

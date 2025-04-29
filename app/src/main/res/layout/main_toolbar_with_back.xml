@@ -7,14 +7,12 @@
 
     <ImageView
         android:id="@+id/ivBack"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/_50sdp"
         android:layout_height="0dp"
-        android:layout_gravity="center"
         android:layout_marginStart="@dimen/_10sdp"
-        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:padding="@dimen/_15sdp"
         android:paddingHorizontal="@dimen/_10sdp"
-        android:src="@drawable/ic_toolbar_drawer_icon"
-        android:visibility="gone"
+        android:src="@drawable/ic_back"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

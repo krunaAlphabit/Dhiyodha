@@ -5,6 +5,7 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
 import com.alphabit.dhiyodha.Dashboard.DashboardActivity
+import com.alphabit.dhiyodha.Splash.WelcomeActivity
 
 class SessionManager(private val _context: Context) {
 
@@ -36,7 +37,7 @@ class SessionManager(private val _context: Context) {
     }
 
     fun checkLogin() {
-        val i = Intent(_context, DashboardActivity::class.java)
+        val i = Intent(_context, WelcomeActivity::class.java)
         i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
         _context.startActivity(i)
         /*if (!isLoggedIn) {

@@ -26,7 +26,7 @@ public class ApiServiceProvider extends RetrofitBase {
     private String mApiUrl;
 
     private ApiServiceProvider(Context context) {
-        super(context, "", true);
+        super(context, Constants.Urlpath.BASE_URL, true);
         mDialog = new LoadingDialog(context);
         apiServices = retrofit.create(ApiServices.class);
     }
@@ -239,11 +239,11 @@ public class ApiServiceProvider extends RetrofitBase {
         });
     }
 
-    public void uploadProfilePictures(String url, MultipartBody.Part image, Boolean isProgressShown, final RetrofitListener retrofitListener) {
+    public void getCategoryWiseProduct(String url, String browsePath, String categoryID, Boolean isProgressShown, final RetrofitListener retrofitListener) {
         if (isProgressShown)
             mDialog.show();
         mApiUrl = url;
-        Call<JsonElement> call = apiServices.uploadProfilePictures(url, image);
+        Call<JsonElement> call = apiServices.getCategoryWiseProduct(url, browsePath, categoryID);
         call.enqueue(new Callback<JsonElement>() {
             @Override
             public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
@@ -255,112 +255,7 @@ public class ApiServiceProvider extends RetrofitBase {
             public void onFailure(Call<JsonElement> call, Throwable t) {
                 dismissDialog();
                 t.printStackTrace();
-                new ConnectionError(context, t).setListener(() -> uploadProfilePictures(url, image, isProgressShown, retrofitListener));
-            }
-        });
-    }
-
-    public void addStory(String url, RequestBody expiresInDays, RequestBody expiresInHours, RequestBody type, MultipartBody.Part image, Boolean isProgressShown, final RetrofitListener retrofitListener) {
-        if (isProgressShown)
-            mDialog.show();
-        mApiUrl = url;
-        Call<JsonElement> call = apiServices.addStory(url, expiresInDays, expiresInHours, type, image);
-        call.enqueue(new Callback<JsonElement>() {
-            @Override
-            public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
-                dismissDialog();
-                manageResponse(response, retrofitListener);
-            }
-
-            @Override
-            public void onFailure(Call<JsonElement> call, Throwable t) {
-                dismissDialog();
-                t.printStackTrace();
-                new ConnectionError(context, t).setListener(() -> addStory(url, expiresInDays, expiresInHours, type, image, isProgressShown, retrofitListener));
-            }
-        });
-    }
-
-    public void addGroupStory(String url, RequestBody expiresInDays, RequestBody expiresInHours, RequestBody type, RequestBody groupId, MultipartBody.Part image, Boolean isProgressShown, final RetrofitListener retrofitListener) {
-        if (isProgressShown)
-            mDialog.show();
-        mApiUrl = url;
-        Call<JsonElement> call = apiServices.addGroupStory(url, expiresInDays, expiresInHours, type, groupId, image);
-        call.enqueue(new Callback<JsonElement>() {
-            @Override
-            public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
-                dismissDialog();
-                manageResponse(response, retrofitListener);
-            }
-
-            @Override
-            public void onFailure(Call<JsonElement> call, Throwable t) {
-                dismissDialog();
-                t.printStackTrace();
-                new ConnectionError(context, t).setListener(() -> addGroupStory(url, expiresInDays, expiresInHours, type, groupId, image, isProgressShown, retrofitListener));
-            }
-        });
-    }
-
-    public void createProfile(String url, RequestBody bio, RequestBody education, RequestBody work, RequestBody basicInfo, RequestBody contactInfo, MultipartBody.Part image, Boolean isProgressShown, final RetrofitListener retrofitListener) {
-        if (isProgressShown)
-            mDialog.show();
-        mApiUrl = url;
-        Call<JsonElement> call = apiServices.createProfile(url, bio, education, work, basicInfo, contactInfo, image);
-        call.enqueue(new Callback<JsonElement>() {
-            @Override
-            public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
-                dismissDialog();
-                manageResponse(response, retrofitListener);
-            }
-
-            @Override
-            public void onFailure(Call<JsonElement> call, Throwable t) {
-                dismissDialog();
-                t.printStackTrace();
-                new ConnectionError(context, t).setListener(() -> createProfile(url, bio, education, work, basicInfo, contactInfo, image, isProgressShown, retrofitListener));
-            }
-        });
-    }
-
-    public void getPerticularAllMessages(String url, int offset, int limit, String roomId, Boolean isProgressShown, final RetrofitListener retrofitListener) {
-        if (isProgressShown) mDialog.show();
-
-        mApiUrl = url;
-        Call<JsonElement> call = apiServices.getPerticularUserMessages(url, offset, limit, roomId);
-        call.enqueue(new Callback<JsonElement>() {
-            @Override
-            public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
-                dismissDialog();
-                manageResponse(response, retrofitListener);
-            }
-
-            @Override
-            public void onFailure(Call<JsonElement> call, Throwable t) {
-                dismissDialog();
-                t.printStackTrace();
-                new ConnectionError(context, t).setListener(() -> getPerticularAllMessages(url, offset, limit, roomId, isProgressShown, retrofitListener));
-            }
-        });
-    }
-
-    public void getFollowersList(String url, String type, Boolean isProgressShown, final RetrofitListener retrofitListener) {
-        if (isProgressShown) mDialog.show();
-
-        mApiUrl = url;
-        Call<JsonElement> call = apiServices.getFollowersList(url, type);
-        call.enqueue(new Callback<JsonElement>() {
-            @Override
-            public void onResponse(Call<JsonElement> call, Response<JsonElement> response) {
-                dismissDialog();
-                manageResponse(response, retrofitListener);
-            }
-
-            @Override
-            public void onFailure(Call<JsonElement> call, Throwable t) {
-                dismissDialog();
-                t.printStackTrace();
-                new ConnectionError(context, t).setListener(() -> getFollowersList(url, type, isProgressShown, retrofitListener));
+                new ConnectionError(context, t).setListener(() -> getCategoryWiseProduct(url, browsePath, categoryID, isProgressShown, retrofitListener));
             }
         });
     }

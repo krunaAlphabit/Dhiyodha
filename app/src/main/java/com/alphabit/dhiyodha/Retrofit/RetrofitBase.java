@@ -59,13 +59,13 @@ public class RetrofitBase {
 
     private void addVersioningHeaders(OkHttpClient.Builder builder, Context context) {
         final String appVersion = "v.1.0.1";
-        //final int version = AppUtils.INSTANCE.getApplicationVersionCode(context);
         final String appName = "RetroKit";
         final String name = "RetroKit";
         builder.interceptors().add(new Interceptor() {
             @Override
             public okhttp3.Response intercept(Chain chain) throws IOException {
-                String authToken = mSessionManager.getAuthToken(SessionManager.AUTH_TOKEN);
+                //String authToken = mSessionManager.getAuthToken(SessionManager.AUTH_TOKEN);
+                String authToken = "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhZG1pbkBkaGl5b2RoYS5jb20iLCJpYXQiOjE3NDU0NzIxMTAsImV4cCI6MTg1MzQ3MjExMH0.FTaHFlc5stcGCsMWh_-RIuaX_sBFawxL1PqP_xHt5PQ";
                 Request request;
                 if (authToken.isEmpty()) {
                     request = chain.request().newBuilder()

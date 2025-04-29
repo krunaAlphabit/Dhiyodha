@@ -1,3 +1,5 @@
+import org.gradle.kotlin.dsl.implementation
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -115,4 +117,16 @@ dependencies {
 
     // AlertDialog
     implementation(libs.sweetalert.library)
+
+    //Otp View
+    implementation(libs.kevinschildhorn.otpview)
+
+    implementation(libs.kotlin.stdlib)
+
+    implementation(libs.glide)
+
+    annotationProcessor(libs.compiler)
+
+    //Image Slider
+    implementation(libs.android.image.slider)
 }
